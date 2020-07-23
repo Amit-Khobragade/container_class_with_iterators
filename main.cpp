@@ -15,9 +15,11 @@ int main() {
 	testring.add( "four" );
 	cout << testring;
 	blank_line();
+
 	for (auto it = testring.begin(); it != testring.end(); it++)
 		cout << *it << endl;
 	blank_line();
+
 	for (string s : testring)
 		cout << s << endl;
 }
