@@ -64,24 +64,30 @@ class ring<T>::iterator {
 private:
 	size_t current_pos;
 	ring it_ring;
+
 public:
 	iterator( size_t current_pos, ring<T> R )
 		:current_pos{ current_pos }, it_ring{ R }
 	{}
+
 	iterator( iterator& other )
 		:current_pos{ other.current_pos }, it_ring{ other.it_ring }
 	{}
+
 	iterator (iterator&& other)
 		:current_pos{ other.current_pos }, it_ring{ other.it_ring }
 	{}
+
 	iterator& operator++(int) {
 		current_pos++;
 		return *this;
 	}
+
 	iterator& operator++() {
 		current_pos++;
 		return *this;
 	}
+
 	T operator*() {
 		return it_ring.obj[current_pos];
 	}
